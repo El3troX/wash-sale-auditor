@@ -1,0 +1,4 @@
+"Date","Action","Symbol","Description","Quantity","Price","Fees & Comm","Amount","Gain/Loss"
+"03/10/2024","Buy","AAPL","APPLE INC","50","$172.50","$0.00","-$8,625.00",""
+"03/28/2024","Buy","IVV","ISHARES CORE S&P 500 ETF","50","$442.00","$0.00","-$22,100.00",""
+"04/15/2024","Sell","IVV","ISHARES CORE S&P 500 ETF","50","$430.00","$0.00","$21,500.00","-$600.00"
