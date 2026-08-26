@@ -6,7 +6,15 @@ confirmed vs. review-band event segregation, lot-level ledger, and Form 8949 CSV
 
 from datetime import date
 import io
+from pathlib import Path
+import sys
 from typing import Dict, List
+
+# Ensure project root is in sys.path regardless of execution working directory
+root_dir = str(Path(__file__).resolve().parent.parent)
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
+
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
