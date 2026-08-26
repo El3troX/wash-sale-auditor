@@ -89,14 +89,14 @@ if dataset_choice == "Upload Custom Broker CSV/OFX":
 else:
     # Load synthetic dataset based on selection
     from tests.conftest import (
-        tc01_dataset,
-        tc02_dataset,
-        tc03_dataset,
-        tc04_dataset,
-        tc05_chained_dataset,
-        tc05_competing_dataset,
-        tc06_dataset,
-        full_portfolio_dataset,
+        build_tc01_dataset,
+        build_tc02_dataset,
+        build_tc03_dataset,
+        build_tc04_dataset,
+        build_tc05_chained_dataset,
+        build_tc05_competing_dataset,
+        build_tc06_dataset,
+        build_full_portfolio_dataset,
     )
     # Recreate fixture instances
     acc_dict = {
@@ -106,27 +106,19 @@ else:
         "wealthfront_robo": demo_accounts["acct_wf_robo"],
     }
     if dataset_choice == "TC-01: Single Account Baseline (Pub 550)":
-        transactions = tc01_dataset(acc_dict)
+        transactions = build_tc01_dataset(acc_dict)
     elif dataset_choice == "TC-02: 30-Day Lookback Window":
-        transactions = tc02_dataset(acc_dict)
+        transactions = build_tc02_dataset(acc_dict)
     elif dataset_choice == "TC-03: Cross-Broker ETF Swap (VOO -> IVV)":
-        transactions = tc03_dataset(acc_dict)
+        transactions = build_tc03_dataset(acc_dict)
     elif dataset_choice == "TC-04: IRA Repurchase (Rev. Rul. 2008-5)":
-        transactions = tc04_dataset(acc_dict)
+        transactions = build_tc04_dataset(acc_dict)
     elif dataset_choice == "TC-05: Chained Wash Sales & Competing Sales":
-        transactions = tc05_chained_dataset(acc_dict) + tc05_competing_dataset(acc_dict)
+        transactions = build_tc05_chained_dataset(acc_dict) + build_tc05_competing_dataset(acc_dict)
     elif dataset_choice == "TC-06: Same-Day Same-Lot Filter":
-        transactions = tc06_dataset(acc_dict)
+        transactions = build_tc06_dataset(acc_dict)
     else:
-        transactions = full_portfolio_dataset(
-            tc01_dataset=tc01_dataset(acc_dict),
-            tc02_dataset=tc02_dataset(acc_dict),
-            tc03_dataset=tc03_dataset(acc_dict),
-            tc04_dataset=tc04_dataset(acc_dict),
-            tc05_chained_dataset=tc05_chained_dataset(acc_dict),
-            tc05_competing_dataset=tc05_competing_dataset(acc_dict),
-            tc06_dataset=tc06_dataset(acc_dict),
-        )
+        transactions = build_full_portfolio_dataset(acc_dict)
 
 # Execute Detection Engine
 detector = WashSaleDetectionEngine()
