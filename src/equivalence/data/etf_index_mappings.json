@@ -1,0 +1,51 @@
+{
+  "description": "Curated benchmark index tracking mappings for Tier 2 ETF equivalence lookup",
+  "version": "1.0",
+  "index_families": {
+    "S&P 500": [
+      "VOO",
+      "IVV",
+      "SPY",
+      "SPLG"
+    ],
+    "Nasdaq-100": [
+      "QQQ",
+      "QQQM"
+    ],
+    "CRSP US Total Market / S&P Total Market / Russell 3000": [
+      "VTI",
+      "ITOT",
+      "SCHB",
+      "SPTM",
+      "IWV"
+    ],
+    "FTSE Global All Cap ex US / MSCI ACWI ex USA": [
+      "VXUS",
+      "IXUS"
+    ],
+    "Bloomberg US Aggregate Bond": [
+      "BND",
+      "AGG"
+    ],
+    "ICE 1-3 Year US Treasury": [
+      "SHY",
+      "VGSH"
+    ],
+    "Semiconductor Benchmark": [
+      "SMH",
+      "SOXX"
+    ],
+    "Technology Select Sector": [
+      "XLK",
+      "VGT"
+    ],
+    "Real Estate Select Sector": [
+      "VNQ",
+      "IYR"
+    ],
+    "Gold Physical Trust": [
+      "GLD",
+      "IAU"
+    ]
+  }
+}
