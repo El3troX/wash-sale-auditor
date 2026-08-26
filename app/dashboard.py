@@ -47,11 +47,6 @@ st.warning(
     "It is not Certified Public Accountant (CPA) or IRS-certified tax advice. Consult a licensed CPA for tax filings."
 )
 
-
-def load_demo_portfolio() -> Tuple_Data:  # type: ignore
-    pass
-
-
 # Sidebar controls
 st.sidebar.header("📁 Data Ingestion & Settings")
 dataset_choice = st.sidebar.selectbox(
@@ -124,13 +119,13 @@ else:
         transactions = tc06_dataset(acc_dict)
     else:
         transactions = full_portfolio_dataset(
-            tc01_dataset(acc_dict),
-            tc02_dataset(acc_dict),
-            tc03_dataset(acc_dict),
-            tc04_dataset(acc_dict),
-            tc05_chained_dataset(acc_dict),
-            tc05_competing_dataset(acc_dict),
-            tc06_dataset(acc_dict),
+            tc01_dataset=tc01_dataset(acc_dict),
+            tc02_dataset=tc02_dataset(acc_dict),
+            tc03_dataset=tc03_dataset(acc_dict),
+            tc04_dataset=tc04_dataset(acc_dict),
+            tc05_chained_dataset=tc05_chained_dataset(acc_dict),
+            tc05_competing_dataset=tc05_competing_dataset(acc_dict),
+            tc06_dataset=tc06_dataset(acc_dict),
         )
 
 # Execute Detection Engine
